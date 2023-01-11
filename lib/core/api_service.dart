@@ -5,6 +5,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 class ApiService {
+
   String baseUrl = "https://api.openai.com/v1/completions";
 
   Map<String, String>? header = {
@@ -14,6 +15,7 @@ class ApiService {
 
   sendMessage(String? message) async {
     try {
+
       var res = await http.post(
         headers: header,
         Uri.parse(baseUrl),

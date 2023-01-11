@@ -19,7 +19,6 @@ Future<void> init() async {
   );
 }
 
-final chatGptnotifierProvider =
-    StateNotifierProvider<ChatGptNotifier, ChatGptState>((ref) {
+final chatGptNotifierProvider = StateNotifierProvider<ChatGptNotifier, ChatGptState>((ref) {
   return ChatGptNotifier(chatGptDomain: sl());
 });

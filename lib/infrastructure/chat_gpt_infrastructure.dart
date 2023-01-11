@@ -10,6 +10,7 @@ class ChatGptInfrastructure extends ChatGptDomain {
   Future<MessageModel?> getResponse(String text) async {
     try {
       String? msg = await apiService.sendMessage(text);
+
       if (msg != null) {
         return MessageModel(
             message: msg.replaceFirst("\n\n", ""), isUser: false);
@@ -17,7 +18,7 @@ class ChatGptInfrastructure extends ChatGptDomain {
 
       return null;
     } catch (e) {
-      ToastMessage.error("error occured => $e");
+      ToastMessage.error("error occurred => $e");
       return null;
     }
   }

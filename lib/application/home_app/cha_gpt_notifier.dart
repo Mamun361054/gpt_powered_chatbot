@@ -38,7 +38,7 @@ class ChatGptNotifier extends StateNotifier<ChatGptState> {
       if (v != null) {
         addMessageForBot(v);
       } else {
-        ToastMessage.error("error occured");
+        ToastMessage.error("error occurred");
       }
     });
     stateMaker(state.copyWith(isLoading: false));
