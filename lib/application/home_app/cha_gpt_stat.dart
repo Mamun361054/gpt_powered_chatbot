@@ -5,8 +5,7 @@ class ChatGptState extends Equatable {
   final List<MessageModel> messages;
   final bool isLoading;
   final bool isRecording;
-
-  final int percenTage;
+  final int percentage;
   final String textFromMic;
   final bool isSpeakEnabled;
 
@@ -14,7 +13,7 @@ class ChatGptState extends Equatable {
     required this.isLoading,
     required this.messages,
     required this.isRecording,
-    required this.percenTage,
+    required this.percentage,
     required this.textFromMic,
     required this.isSpeakEnabled,
   });
@@ -23,7 +22,7 @@ class ChatGptState extends Equatable {
         isLoading: false,
         messages: [],
         isRecording: false,
-        percenTage: 1,
+        percentage: 1,
         textFromMic: "",
         isSpeakEnabled: false,
       );
@@ -35,12 +34,11 @@ class ChatGptState extends Equatable {
     int? percenTage,
     String? textFromMic,
     bool? isSpeakEnabled,
-  }) =>
-      ChatGptState(
+  }) => ChatGptState(
         isLoading: isLoading ?? this.isLoading,
         messages: messages ?? this.messages,
         isRecording: isRecording ?? this.isRecording,
-        percenTage: percenTage ?? this.percenTage,
+        percentage: percenTage ?? percentage,
         textFromMic: textFromMic ?? this.textFromMic,
         isSpeakEnabled: isSpeakEnabled ?? this.isSpeakEnabled,
       );
@@ -50,7 +48,7 @@ class ChatGptState extends Equatable {
         messages,
         isLoading,
         isRecording,
-        percenTage,
+        percentage,
         textFromMic,
         isSpeakEnabled
       ];

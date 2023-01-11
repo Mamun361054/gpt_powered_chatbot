@@ -19,11 +19,11 @@ class HomePage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(chatGptnotifierProvider);
-    final controller = ref.read(chatGptnotifierProvider.notifier);
+    final state = ref.watch(chatGptNotifierProvider);
+    final controller = ref.read(chatGptNotifierProvider.notifier);
 
     ref.listen(
-        chatGptnotifierProvider,
+        chatGptNotifierProvider,
         (p, n) => {
               _messageController.text = n.textFromMic,
               if (p!.messages.length < n.messages.length) {_scrollAnimation()}
